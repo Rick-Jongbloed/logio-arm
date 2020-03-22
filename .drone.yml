@@ -7,28 +7,24 @@ platform:
   arch: arm
 
 steps:
-- name: clone-log.io
-  image: drone/git
-  commands:
-  - git clone https://github.com/NarrativeScience/log.io
-  
-- name: install-log.io
-  image: arm32v7/node:13-alpine
-  commands:
-  # - apk add --no-cache autoconf automake bash g++ libc6-compat make nasm git zlib-dev libtool python
-  #- apk add --no-cache  python
-  #- apk add --no-cache autoconf automake g++ libc6-compat make zlib-dev libtool python
-  #- ls -LRa
-  - cd log.io/server
-  #- npm install bufferutil@4.0.1 utf-8-validate@5.0.2 --verbose
-  - npm install log.io --verbose
-  - ls -LRA /drone
 
-# - name: publish-guacamole-client
-#   image: registry.artificialcreature.com/drone-plugins/kaniko:latest
-#   settings:
-#     registry: registry.artificialcreature.com
-#     repo: apache/guacamole-client
-#     tags: latest
-#     log: info
-#     dockerfile: Dockerfile-client
+# - name: install-log.io
+#   image: arm32v7/node:13-alpine
+#   commands:
+#   # - apk add --no-cache autoconf automake bash g++ libc6-compat make nasm git zlib-dev libtool python
+#   #- apk add --no-cache  python
+#   #- apk add --no-cache autoconf automake g++ libc6-compat make zlib-dev libtool python
+#   #- ls -LRa
+#   - cd log.io/server
+#   #- npm install bufferutil@4.0.1 utf-8-validate@5.0.2 --verbose
+#   - npm install -g log.io
+#   - ls -LRA /drone
+
+ - name: publish-log.io-server
+   image: registry.artificialcreature.com/drone-plugins/kaniko:latest
+   settings:
+     registry: registry.artificialcreature.com
+     repo: NarrativeScience/log.io-server
+     tags: latest
+     log: debug
+     #dockerfile: Dockerfile
