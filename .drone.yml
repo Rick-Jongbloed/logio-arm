@@ -1,0 +1,28 @@
+kind: pipeline
+type: kubernetes
+name: drone-log.io-arm
+
+platform:
+  os: linux
+  arch: arm
+
+steps:
+- name: clone-log.io
+  image: drone/git
+  commands:
+  - git clone https://github.com/NarrativeScience/log.io
+  
+- name: install-log.io
+  image: arm32v7/node-13-alpine
+  commands:
+  - cd log.io/server
+  - npm install -g log.io
+
+# - name: publish-guacamole-client
+#   image: registry.artificialcreature.com/drone-plugins/kaniko:latest
+#   settings:
+#     registry: registry.artificialcreature.com
+#     repo: apache/guacamole-client
+#     tags: latest
+#     log: info
+#     dockerfile: Dockerfile-client
