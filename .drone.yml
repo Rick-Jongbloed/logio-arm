@@ -15,6 +15,7 @@ steps:
 - name: install-log.io
   image: arm32v7/node-13-alpine
   commands:
+  - ls -LRa
   - cd log.io/server
   - npm install -g log.io
 
