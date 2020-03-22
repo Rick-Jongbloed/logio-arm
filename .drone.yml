@@ -13,7 +13,7 @@ steps:
   - git clone https://github.com/NarrativeScience/log.io
   
 - name: install-log.io
-  image: arm32v7/node-13-alpine
+  image: arm32v7/node:13-alpine
   commands:
   - ls -LRa
   - cd log.io/server
