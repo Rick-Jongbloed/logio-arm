@@ -17,7 +17,7 @@ RUN apk add --no-cache --virtual \
     apk del --no-cache build-deps && \
     mkdir /etc/supervisord.d
 
- ADD supervisor.conf /etc/supervisord.d/supervisor.conf
+ ADD supervisor.conf /etc/supervisor/conf.d/supervisor.conf
  ADD entrypoint.sh /entrypoint.sh
  
 EXPOSE 28778
