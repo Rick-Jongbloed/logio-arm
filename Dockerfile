@@ -20,6 +20,6 @@ RUN apk add --no-cache --virtual \
  ADD supervisor.conf /etc/supervisor/conf.d/supervisor.conf
  ADD entrypoint.sh /entrypoint.sh
  
-EXPOSE 28778
+EXPOSE 6688 6689
 
 ENTRYPOINT ["/entrypoint.sh"]
