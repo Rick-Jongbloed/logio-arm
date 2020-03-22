@@ -14,12 +14,14 @@ RUN apk add --no-cache --virtual \
     npm install -g utf-8-validate@5.0.2 --user 'root' && \
     npm install -g log.io --user 'root' && \
     apk del --no-cache build-deps && \
-    mkdir /etc/supervisord.d
+    mkdir /etc/supervisord.d && \
+    chmod +x entrypoint.sh
 
+USER root
 ADD server.json /root/.log.io/server.json
 ADD supervisor.conf /etc/supervisor/conf.d/supervisor.conf
 ADD entrypoint.sh /entrypoint.sh
- 
+
 EXPOSE 6688 6689
 
 ENTRYPOINT ["/entrypoint.sh"]
