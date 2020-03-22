@@ -24,7 +24,7 @@ steps:
    image: registry.artificialcreature.com/drone-plugins/kaniko:latest
    settings:
      registry: registry.artificialcreature.com
-     repo: NarrativeScience/log.io-server
+     repo: narrativescience/log.io-server
      tags: latest
      log: debug
      #dockerfile: Dockerfile
