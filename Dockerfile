@@ -16,7 +16,6 @@ RUN apk add --no-cache --virtual \
     apk add \
         supervisord \
         bash && \
-autoconf automake g++ libc6-compat make zlib-dev libtool python supervisord bash && \
     npm install -g bufferutil@4.0.1 --user 'root' && \
     npm install -g utf-8-validate@5.0.2 --user 'root' && \
     npm install -g log.io --user 'root' && \
