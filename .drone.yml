@@ -15,7 +15,8 @@ steps:
 - name: install-log.io
   image: arm32v7/node:13-alpine
   commands:
-  - ls -LRa
+  - apk add --no-cache autoconf automake bash g++ libc6-compat make nasm git zlib-dev libtool python
+  #- ls -LRa
   - cd log.io/server
   - npm install -g bufferutil@4.0.1 utf-8-validate@5.0.2
   - npm install -g log.io 
