@@ -2,7 +2,6 @@ FROM arm32v7/node:13-alpine
 LABEL MAINTAINER Rick Jonbloed <r.jongbloed@gmail.com>
 
 ENV LOGIO_SERVER_CONFIG_PATH /root/.log.io/server.json
-ENV LOGIO_FILE_INPUT_CONFIG_PATH /root/.log.io/inputs/file.json
 
 # one RUN step
 RUN apk add --no-cache --virtual \
@@ -17,8 +16,9 @@ RUN apk add --no-cache --virtual \
     apk del --no-cache build-deps && \
     mkdir /etc/supervisord.d
 
- ADD supervisor.conf /etc/supervisor/conf.d/supervisor.conf
- ADD entrypoint.sh /entrypoint.sh
+ADD server.json /root/.log.io/server.json
+ADD supervisor.conf /etc/supervisor/conf.d/supervisor.conf
+ADD entrypoint.sh /entrypoint.sh
  
 EXPOSE 6688 6689
 
