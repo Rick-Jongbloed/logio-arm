@@ -18,8 +18,8 @@ steps:
   - apk add --no-cache autoconf automake bash g++ libc6-compat make nasm git zlib-dev libtool python
   #- ls -LRa
   - cd log.io/server
-  - npm install bufferutil@4.0.1 utf-8-validate@5.0.2
-  - npm install -g log.io 
+  - npm install bufferutil@4.0.1 utf-8-validate@5.0.2 --verbose
+  - npm install -g log.io --verbose
 
 # - name: publish-guacamole-client
 #   image: registry.artificialcreature.com/drone-plugins/kaniko:latest
