@@ -9,7 +9,7 @@ RUN apk add --no-cache --virtual \
         build-deps \
         build-base && \
     apk add \
-        supervisord \
+        supervisor \
         bash && \
     npm install -g bufferutil@4.0.1 --user 'root' && \
     npm install -g utf-8-validate@5.0.2 --user 'root' && \
