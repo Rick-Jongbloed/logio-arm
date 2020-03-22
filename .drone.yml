@@ -17,7 +17,8 @@ steps:
   commands:
   - ls -LRa
   - cd log.io/server
-  - npm install -g log.io
+  - npm install -g bufferutil@4.0.1 utf-8-validate@5.0.2
+  - npm install -g log.io 
 
 # - name: publish-guacamole-client
 #   image: registry.artificialcreature.com/drone-plugins/kaniko:latest
