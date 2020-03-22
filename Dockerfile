@@ -17,7 +17,7 @@ RUN apk add --no-cache --virtual \
     apk del --no-cache build-deps && \
     mkdir /etc/supervisord.d
 
- ADD supervisor-logio-server.conf /etc/supervisord.d/supervisord.conf
+ ADD supervisor.conf /etc/supervisord.d/supervisor.conf
  ADD entrypoint.sh /entrypoint.sh
  
 EXPOSE 28778
